@@ -1,0 +1,66 @@
+{
+  "currency": "PKR",
+  "note": "Every wedding is different — packages are a starting point. Travel outside Rawalpindi / Islamabad is quoted separately.",
+  "items": [
+    {
+      "name": "Essence",
+      "price": "150,000",
+      "tagline": "One day, beautifully told",
+      "featured": false,
+      "includes": [
+        "1 event day (up to 8 hours)",
+        "1 cinematographer + 1 photographer",
+        "3–4 minute highlight film",
+        "300+ edited photographs",
+        "Online gallery, delivered in 4 weeks"
+      ]
+    },
+    {
+      "name": "Signature",
+      "price": "320,000",
+      "tagline": "Our most-loved story",
+      "featured": true,
+      "includes": [
+        "2 event days (Mehndi + Baraat or Walima)",
+        "2 cinematographers + 2 photographers",
+        "6–8 minute cinematic film + 60s teaser",
+        "Full-length documentary edit",
+        "600+ edited photographs",
+        "Drone coverage (where permitted)",
+        "Premium printed album (30 pages)"
+      ]
+    },
+    {
+      "name": "Legacy",
+      "price": "550,000",
+      "tagline": "The whole celebration, every chapter",
+      "featured": false,
+      "includes": [
+        "Up to 4 event days + pre-wedding shoot",
+        "Full crew with dedicated director",
+        "Feature film (12–15 min) + teaser + reels",
+        "Same-day edit screened at the reception",
+        "1000+ edited photographs",
+        "Two heirloom albums + USB keepsake box"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do we book our date?",
+      "answer": "Send an inquiry with your dates and venue. We'll set up a short call, then a 30% advance and a simple agreement secure your date. The balance is due a week before the first event."
+    },
+    {
+      "question": "When will we receive our film and photos?",
+      "answer": "A sneak-peek set of photos within 72 hours, the teaser within 2 weeks, the full photo gallery in 4 weeks and the cinematic film in 6–8 weeks."
+    },
+    {
+      "question": "Do you travel for destination weddings?",
+      "answer": "Yes — we've filmed across Pakistan and abroad. Travel and stay are quoted at cost, with no hidden markup."
+    },
+    {
+      "question": "Can we customise a package?",
+      "answer": "Always. Add an extra event, a pre-wedding shoot, drone, an extra album or a same-day edit — tell us what matters most and we'll shape it around you."
+    }
+  ]
+}

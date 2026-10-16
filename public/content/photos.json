@@ -1,0 +1,13 @@
+{
+  "items": [
+    { "image": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", "caption": "First look", "couple": "Ayesha & Hamza" },
+    { "image": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80", "caption": "The details", "couple": "Zara & Bilal" },
+    { "image": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", "caption": "Bridal portrait", "couple": "Mahnoor & Saad" },
+    { "image": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80", "caption": "Evening light", "couple": "Hira & Usman" },
+    { "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80", "caption": "Celebration", "couple": "Sana & Ali" },
+    { "image": "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80", "caption": "Just us", "couple": "Iqra & Fahad" },
+    { "image": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80", "caption": "Reception", "couple": "Ayesha & Hamza" },
+    { "image": "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80", "caption": "Vows", "couple": "Zara & Bilal" },
+    { "image": "https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1200&q=80", "caption": "Mehndi night", "couple": "Hira & Usman" }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "title": "A Monsoon Nikkah",
+      "couple": "Ayesha & Hamza",
+      "youtube": "",
+      "category": "Highlights",
+      "cover": "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
+      "location": "Lahore",
+      "featured": true
+    },
+    {
+      "title": "Golden Hour Baraat",
+      "couple": "Zara & Bilal",
+      "youtube": "",
+      "category": "Highlights",
+      "cover": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
+      "location": "Islamabad",
+      "featured": true
+    },
+    {
+      "title": "Under the Fairy Lights",
+      "couple": "Mahnoor & Saad",
+      "youtube": "",
+      "category": "Teasers",
+      "cover": "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
+      "location": "Murree",
+      "featured": false
+    },
+    {
+      "title": "Two Families, One Song",
+      "couple": "Hira & Usman",
+      "youtube": "",
+      "category": "Teasers",
+      "cover": "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=80",
+      "location": "Karachi",
+      "featured": false
+    },
+    {
+      "title": "The Quiet Before",
+      "couple": "Sana & Ali",
+      "youtube": "",
+      "category": "Couples",
+      "cover": "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80",
+      "location": "Hunza",
+      "featured": false
+    },
+    {
+      "title": "Promise in the Hills",
+      "couple": "Iqra & Fahad",
+      "youtube": "",
+      "category": "Couples",
+      "cover": "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80",
+      "location": "Nathia Gali",
+      "featured": false
+    }
+  ]
+}
