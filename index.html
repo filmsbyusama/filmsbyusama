@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>filmsbyusama — Wedding Films &amp; Photography</title>
+    <meta name="description" content="filmsbyusama — cinematic wedding films and editorial wedding photography. Capturing timeless love stories." />
+    <meta property="og:title" content="filmsbyusama — Wedding Films & Photography" />
+    <meta property="og:description" content="Capturing timeless love stories." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#FDFBF7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0D0D0D" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Queensides is self-hosted from /public/fonts (see src/index.css).
+         Preload it so headings don't flash in the fallback font. -->
+    <link rel="preload" href="/fonts/Queensides.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Fallback font while Queensides loads (or if the file is missing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Apply the saved theme before first paint to avoid a light/dark flash -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('fbu-theme');
+          var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Netlify Identity: needed on the homepage so invite / password-reset
+         email links (#invite_token=...) open the login dialog, then send you to /admin -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  </head>
+  <body>
+    <!-- Netlify Forms reads this hidden copy at build time so the React form
+         (src/components/Contact.jsx) can submit to it. Keep field names in sync. -->
+    <form name="inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" /><input type="email" name="email" /><input type="tel" name="phone" />
+      <input type="text" name="date" /><input type="text" name="dateEnd" /><input type="text" name="venue" />
+      <input type="text" name="package" /><input type="text" name="budget" /><textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.addEventListener('load', function () {
+        if (!window.netlifyIdentity) return;
+        window.netlifyIdentity.on('init', function (user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function () {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
