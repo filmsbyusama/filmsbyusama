@@ -1,0 +1,2 @@
+# Same rule as netlify.toml — kept here as a fallback for drag-and-drop deploys.
+/*    /index.html   200
