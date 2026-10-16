@@ -1,0 +1,171 @@
+# ------------------------------------------------------------------
+# filmsbyusama — Decap CMS admin  (open https://YOUR-SITE.netlify.app/admin)
+# Every save commits a JSON file to your Git repo → Netlify rebuilds
+# the site automatically (≈1 minute). No server, no database, no cost.
+# ------------------------------------------------------------------
+
+backend:
+  name: git-gateway
+  branch: main            # change if your repo's default branch is "master"
+
+# Edit locally without logging in:  run `npm run cms` in one terminal and
+# `npm run dev` in another, then open http://localhost:5173/admin/
+local_backend: true
+
+site_url: https://filmsbyusamaweb.netlify.app
+display_url: https://filmsbyusamaweb.netlify.app
+logo_url: /favicon.svg
+
+# Uploaded images are saved into the repo and served from /uploads/...
+media_folder: public/uploads
+public_folder: /uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ================================================================
+  # MEDIA MANAGER — YouTube wedding films
+  # ================================================================
+  - name: films
+    label: "🎬 Films (YouTube)"
+    description: "Add, edit, reorder or delete wedding films. Drag items to change their order on the site."
+    files:
+      - name: films
+        label: Wedding Films
+        file: public/content/films.json
+        fields:
+          - name: items
+            label: Films
+            label_singular: Film
+            widget: list
+            summary: "{{fields.title}} — {{fields.couple}} ({{fields.category}})"
+            collapsed: true
+            fields:
+              - { name: title, label: "Film title", widget: string }
+              - { name: couple, label: "Couple names", widget: string, hint: "e.g. Ayesha & Hamza" }
+              - name: youtube
+                label: "YouTube link or video ID"
+                widget: string
+                required: false
+                hint: "Paste any YouTube link (watch, youtu.be, shorts, embed) or the 11-character ID. Leave empty to show 'coming soon'."
+              - name: category
+                label: Category
+                widget: select
+                options: ["Highlights", "Teasers", "Couples", "Full Films", "Mehndi", "Destination"]
+                default: Highlights
+              - name: cover
+                label: "Cover image"
+                widget: image
+                required: false
+                hint: "Upload an image or paste an image URL. Leave empty to use the YouTube thumbnail automatically."
+              - { name: location, label: "Location", widget: string, required: false }
+              - { name: featured, label: "Featured (shown first, larger card)", widget: boolean, default: false }
+
+  # ================================================================
+  # PHOTO MANAGER
+  # ================================================================
+  - name: photos
+    label: "📷 Photography"
+    files:
+      - name: photos
+        label: Photo Portfolio
+        file: public/content/photos.json
+        fields:
+          - name: items
+            label: Photos
+            label_singular: Photo
+            widget: list
+            summary: "{{fields.caption}} — {{fields.couple}}"
+            collapsed: true
+            fields:
+              - { name: image, label: "Photo", widget: image, hint: "Upload, or paste a direct image URL. Long edge ~1600px is plenty." }
+              - { name: caption, label: "Caption", widget: string, required: false }
+              - { name: couple, label: "Couple", widget: string, required: false }
+
+  # ================================================================
+  # PACKAGES & TESTIMONIALS
+  # ================================================================
+  - name: packages
+    label: "💍 Packages"
+    files:
+      - name: packages
+        label: Investment / Packages
+        file: public/content/packages.json
+        fields:
+          - { name: currency, label: "Currency label", widget: string, default: "PKR" }
+          - { name: note, label: "Note under packages", widget: text, required: false }
+          - name: items
+            label: Packages
+            label_singular: Package
+            widget: list
+            summary: "{{fields.name}} — {{fields.price}}"
+            fields:
+              - { name: name, label: "Package name", widget: string }
+              - { name: price, label: "Starting price", widget: string, hint: "Text, e.g. 150,000 or 'On request'" }
+              - { name: tagline, label: "Tagline", widget: string, required: false }
+              - { name: featured, label: "Highlight as most popular", widget: boolean, default: false }
+              - { name: includes, label: "What's included", widget: list, field: { name: item, label: Item, widget: string } }
+          - name: faqs
+            label: "Booking FAQs (accordion)"
+            label_singular: FAQ
+            widget: list
+            required: false
+            summary: "{{fields.question}}"
+            fields:
+              - { name: question, label: Question, widget: string }
+              - { name: answer, label: Answer, widget: text }
+
+  - name: testimonials
+    label: "💬 Testimonials"
+    files:
+      - name: testimonials
+        label: Client Reviews
+        file: public/content/testimonials.json
+        fields:
+          - name: items
+            label: Reviews
+            label_singular: Review
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: quote, label: "Quote", widget: text }
+              - { name: name, label: "Couple / client name", widget: string }
+              - { name: event, label: "Event & place", widget: string, required: false }
+
+  # ================================================================
+  # SITE SETTINGS
+  # ================================================================
+  - name: settings
+    label: "⚙️ Site Settings"
+    files:
+      - name: settings
+        label: General, Hero, About & Contact
+        file: public/content/settings.json
+        fields:
+          - { name: studioName, label: "Studio name (logo text)", widget: string, default: "filmsbyusama" }
+          - { name: tagline, label: "Hero headline", widget: string }
+          - { name: heroSubtitle, label: "Hero subtitle", widget: text }
+          - name: heroYoutube
+            label: "Hero background reel (YouTube link or ID)"
+            widget: string
+            required: false
+            hint: "Plays muted on loop behind the headline. Leave empty to use the hero image."
+          - { name: heroImage, label: "Hero image (shown before / instead of the reel)", widget: image }
+          - { name: location, label: "Location line", widget: string, required: false }
+          - { name: email, label: "Email", widget: string }
+          - { name: whatsapp, label: "WhatsApp number", widget: string, hint: "Country code, digits only — e.g. 923001234567" }
+          - { name: instagram, label: "Instagram URL", widget: string, required: false }
+          - { name: youtube, label: "YouTube channel URL", widget: string, required: false }
+          - { name: vimeo, label: "Vimeo URL", widget: string, required: false }
+          - { name: tiktok, label: "TikTok URL", widget: string, required: false }
+          - { name: aboutTitle, label: "Story — heading", widget: string }
+          - { name: aboutText, label: "Story — text", widget: text, hint: "Blank line = new paragraph" }
+          - { name: aboutImage, label: "Story — portrait image", widget: image }
+          - name: stats
+            label: "Story — numbers"
+            widget: list
+            fields:
+              - { name: value, label: Value, widget: string }
+              - { name: label, label: Label, widget: string }
