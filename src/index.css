@@ -1,0 +1,140 @@
+/* ------------------------------------------------------------------
+   Queensides — self-hosted
+   Put your licensed font files in /public/fonts/ with these names:
+     Queensides.woff2  (best)   Queensides.woff   Queensides.ttf
+   Only the regular weight is needed. Light / Medium are optional.
+   ------------------------------------------------------------------ */
+@font-face {
+  font-family: 'Queensides';
+  src: url('/fonts/Queensides.woff2') format('woff2'),
+       url('/fonts/Queensides.woff') format('woff'),
+       url('/fonts/Queensides.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Queensides';
+  src: url('/fonts/Queensides-Light.woff2') format('woff2'),
+       url('/fonts/Queensides-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Queensides';
+  src: url('/fonts/Queensides-Medium.woff2') format('woff2'),
+       url('/fonts/Queensides-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens (RGB triplets so Tailwind opacity modifiers work: bg-gold/20) */
+:root {
+  --bg: 253 251 247;       /* #FDFBF7 ivory */
+  --surface: 246 241 232;  /* slightly deeper ivory for cards */
+  --ink: 26 26 26;         /* #1A1A1A charcoal */
+  --muted: 106 99 90;      /* warm grey */
+  --line: 26 26 26;        /* used at low opacity */
+  --gold: 212 175 55;      /* #D4AF37 champagne */
+  color-scheme: light;
+}
+.dark {
+  --bg: 13 13 13;          /* #0D0D0D obsidian */
+  --surface: 22 21 20;
+  --ink: 240 240 240;      /* #F0F0F0 */
+  --muted: 160 154 145;
+  --line: 240 240 240;
+  --gold: 229 193 88;      /* #E5C158 muted gold */
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg text-ink font-queensides antialiased;
+    transition: background-color 0.6s cubic-bezier(0.22, 1, 0.36, 1), color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-gold/30 text-ink;
+  }
+  img { @apply select-none; }
+  :focus-visible {
+    @apply outline-none ring-1 ring-gold ring-offset-2 ring-offset-bg;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[0.7rem] uppercase tracking-editorial text-gold;
+  }
+  .display {
+    @apply font-normal leading-[1.05] tracking-[-0.01em];
+  }
+  .hairline {
+    @apply border-line/10;
+  }
+  .glass {
+    @apply bg-bg/60 backdrop-blur-xl backdrop-saturate-150 border border-line/10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[0.72rem] uppercase tracking-[0.28em] transition-all duration-500 ease-cinematic;
+  }
+  .btn-gold {
+    @apply btn bg-gold text-[#0D0D0D] hover:bg-ink hover:text-bg;
+  }
+  .btn-ghost {
+    @apply btn border border-ink/25 text-ink hover:border-gold hover:text-gold;
+  }
+  .field {
+    @apply w-full bg-transparent border-0 border-b border-line/20 px-0 py-3 text-ink placeholder:text-muted/70 focus:border-gold focus:ring-0 transition-colors duration-300;
+  }
+  .field-label {
+    @apply block text-[0.68rem] uppercase tracking-[0.26em] text-muted mb-1;
+  }
+}
+
+/* Film grain overlay for the cinematic feel */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+}
+
+/* Hide scrollbar on horizontal rails */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+/* Native date input icon tint */
+.dark input[type='date']::-webkit-calendar-picker-indicator { filter: invert(0.85); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
