@@ -5,20 +5,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Theme-aware tokens (values live in src/index.css as CSS variables)
+        // Theme-aware palette tokens — values live in src/index.css
         bg: 'rgb(var(--bg) / <alpha-value>)',
         surface: 'rgb(var(--surface) / <alpha-value>)',
         ink: 'rgb(var(--ink) / <alpha-value>)',
         muted: 'rgb(var(--muted) / <alpha-value>)',
         line: 'rgb(var(--line) / <alpha-value>)',
-        gold: 'rgb(var(--gold) / <alpha-value>)',
-        // Fixed brand values, if you ever need them directly
-        ivory: '#FDFBF7',
-        champagne: '#D4AF37',
-        charcoal: '#1A1A1A',
-        obsidian: '#0D0D0D',
-        mutedgold: '#E5C158',
-        offwhite: '#F0F0F0',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        onaccent: 'rgb(var(--on-accent) / <alpha-value>)',
+        deep: 'rgb(var(--deep) / <alpha-value>)',
+        ondeep: 'rgb(var(--on-deep) / <alpha-value>)',
+        accentdeep: 'rgb(var(--accent-deep) / <alpha-value>)',
       },
       fontFamily: {
         queensides: ['Queensides', '"Cormorant Garamond"', 'Georgia', 'serif'],
