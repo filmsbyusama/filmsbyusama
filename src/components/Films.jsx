@@ -58,21 +58,21 @@ function FilmCard({ film, onPlay }) {
 
         {/* Play button floats above the card in 3D */}
         <div className="absolute inset-0 flex items-center justify-center" style={{ transform: 'translateZ(60px)' }}>
-          <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/10 text-white backdrop-blur-md transition-all duration-700 ease-cinematic group-hover:scale-110 group-hover:border-[#E5C158] group-hover:bg-[#E5C158] group-hover:text-[#0D0D0D] sm:h-20 sm:w-20">
+          <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/50 bg-white/10 text-white backdrop-blur-md transition-all duration-700 ease-cinematic group-hover:scale-110 group-hover:border-accentdeep group-hover:bg-accentdeep group-hover:text-deep sm:h-20 sm:w-20">
             <Play size={20} className="translate-x-[2px] fill-current" />
           </span>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 p-5 text-[#F0F0F0] sm:p-7" style={{ transform: 'translateZ(40px)' }}>
-          <div className="mb-3 flex items-center gap-3 text-[0.62rem] uppercase tracking-[0.3em] text-[#E5C158]">
+        <div className="absolute inset-x-0 bottom-0 p-5 text-ondeep sm:p-7" style={{ transform: 'translateZ(40px)' }}>
+          <div className="mb-3 flex items-center gap-3 text-[0.62rem] uppercase tracking-[0.3em] text-accentdeep">
             <span>{film.category}</span>
-            {film.featured && <span className="rounded-full border border-[#E5C158]/50 px-2 py-0.5 text-[0.55rem]">Featured</span>}
-            {!id && <span className="text-[#F0F0F0]/50">Coming soon</span>}
+            {film.featured && <span className="rounded-full border border-accentdeep/50 px-2 py-0.5 text-[0.55rem]">Featured</span>}
+            {!id && <span className="text-ondeep/50">Coming soon</span>}
           </div>
           <h3 className={`leading-[1.05] ${big ? 'text-3xl sm:text-4xl lg:text-5xl' : 'text-3xl'}`}>{film.title}</h3>
-          <p className="mt-2 text-sm text-[#F0F0F0]/70">
+          <p className="mt-2 text-sm text-ondeep/70">
             {film.couple}
-            {film.location && <span className="text-[#F0F0F0]/45"> · {film.location}</span>}
+            {film.location && <span className="text-ondeep/45"> · {film.location}</span>}
           </p>
         </div>
       </button>
@@ -110,11 +110,11 @@ export default function Films({ films = [], onPlay }) {
                 aria-selected={active === c}
                 onClick={() => setActive(c)}
                 className={`relative shrink-0 rounded-full px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.24em] transition-colors duration-500 ${
-                  active === c ? 'text-[#0D0D0D]' : 'text-muted hover:text-ink'
+                  active === c ? 'text-onaccent' : 'text-muted hover:text-ink'
                 }`}
               >
                 {active === c && (
-                  <motion.span layoutId="film-tab" className="absolute inset-0 rounded-full bg-gold" transition={{ type: 'spring', stiffness: 380, damping: 32 }} />
+                  <motion.span layoutId="film-tab" className="absolute inset-0 rounded-full bg-accent" transition={{ type: 'spring', stiffness: 380, damping: 32 }} />
                 )}
                 <span className="relative">{c}</span>
               </button>

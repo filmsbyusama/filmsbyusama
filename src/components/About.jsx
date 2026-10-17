@@ -18,11 +18,11 @@ export default function About({ settings = {} }) {
   return (
     <section id="story" ref={ref} className="relative mx-auto max-w-[1400px] scroll-mt-20 px-5 py-28 sm:px-8 md:py-40 lg:px-12">
       <div className="grid items-center gap-16 lg:grid-cols-12 lg:gap-20">
-        {/* Portrait with inner parallax and a floating gold frame */}
+        {/* Portrait with inner parallax and a floating accent frame */}
         <div className="relative lg:col-span-5" style={{ perspective: 1200 }}>
           <motion.div
             style={{ rotateY: frameRotate }}
-            className="absolute -inset-4 border border-gold/40 sm:-inset-6"
+            className="absolute -inset-4 border border-accent/40 sm:-inset-6"
             aria-hidden
           />
           <motion.div
@@ -43,7 +43,7 @@ export default function About({ settings = {} }) {
           <Reveal>
             <p className="eyebrow mb-5 flex items-center gap-4">
               <span className="text-muted">03</span>
-              <span className="h-px w-10 bg-gold/60" />
+              <span className="h-px w-10 bg-accent/60" />
               The Story
             </p>
           </Reveal>
@@ -58,7 +58,7 @@ export default function About({ settings = {} }) {
             ))}
           </div>
           <Reveal delay={0.25}>
-            <p className="mt-8 text-4xl italic text-gold">— Usama</p>
+            <p className="mt-8 text-4xl italic text-accent">— Usama</p>
           </Reveal>
 
           {Array.isArray(settings.stats) && settings.stats.length > 0 && (
@@ -88,10 +88,10 @@ export default function About({ settings = {} }) {
             variants={{ hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0, transition: { duration: 1, ease } } }}
             className="group bg-bg p-8 transition-colors duration-700 hover:bg-surface sm:p-10"
           >
-            <span className="text-sm italic text-gold">{p.n}</span>
+            <span className="text-sm italic text-accent">{p.n}</span>
             <h3 className="mt-6 text-3xl">{p.title}</h3>
             <p className="mt-3 text-muted">{p.text}</p>
-            <span className="mt-8 block h-px w-8 bg-gold transition-all duration-700 group-hover:w-20" />
+            <span className="mt-8 block h-px w-8 bg-accent transition-all duration-700 group-hover:w-20" />
           </motion.div>
         ))}
       </motion.div>

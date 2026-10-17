@@ -23,7 +23,7 @@ function Faq({ faqs }) {
                 aria-expanded={isOpen}
                 className="group flex w-full items-center justify-between gap-6 py-6 text-left"
               >
-                <span className={`text-2xl transition-colors duration-300 sm:text-[1.7rem] ${isOpen ? 'text-gold' : 'group-hover:text-gold'}`}>{f.question}</span>
+                <span className={`text-2xl transition-colors duration-300 sm:text-[1.7rem] ${isOpen ? 'text-accent' : 'group-hover:text-accent'}`}>{f.question}</span>
                 <motion.span
                   animate={{ rotate: isOpen ? 45 : 0 }}
                   transition={{ duration: 0.5, ease }}
@@ -76,27 +76,27 @@ export default function Packages({ data = {}, onSelect }) {
                 <article
                   className={`relative flex h-full flex-col p-8 transition-colors duration-700 sm:p-10 ${
                     p.featured
-                      ? 'bg-[#0D0D0D] text-[#F0F0F0] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.45)] dark:bg-[#1A1813] dark:ring-1 dark:ring-gold/40'
+                      ? 'bg-deep text-ondeep shadow-[0_40px_80px_-30px_rgba(0,0,0,0.45)] dark:bg-surface dark:ring-1 dark:ring-accent/40'
                       : 'border border-line/10 bg-bg'
                   }`}
                 >
                   {p.featured && (
-                    <span className="absolute right-6 top-6 rounded-full bg-gold px-3 py-1 text-[0.58rem] uppercase tracking-[0.24em] text-[#0D0D0D]">
+                    <span className="absolute right-6 top-6 rounded-full bg-accent px-3 py-1 text-[0.58rem] uppercase tracking-[0.24em] text-onaccent">
                       Most loved
                     </span>
                   )}
-                  <p className={`text-[0.68rem] uppercase tracking-[0.3em] ${p.featured ? 'pr-24 text-[#E5C158]' : 'text-gold'}`}>{p.tagline}</p>
+                  <p className={`text-[0.68rem] uppercase tracking-[0.3em] ${p.featured ? 'pr-24 text-accentdeep' : 'text-accent'}`}>{p.tagline}</p>
                   <h3 className="mt-4 text-5xl">{p.name}</h3>
                   <div className={`mt-6 flex items-baseline gap-2 border-b pb-8 ${p.featured ? 'border-white/10' : 'border-line/10'}`}>
-                    <span className={`text-xs uppercase tracking-[0.2em] ${p.featured ? 'text-[#F0F0F0]/50' : 'text-muted'}`}>
+                    <span className={`text-xs uppercase tracking-[0.2em] ${p.featured ? 'text-ondeep/50' : 'text-muted'}`}>
                       from {data.currency}
                     </span>
                     <span className="text-4xl">{p.price}</span>
                   </div>
                   <ul className="mt-8 flex-1 space-y-3.5">
                     {(p.includes || []).map((inc, i) => (
-                      <li key={i} className={`flex gap-3 ${p.featured ? 'text-[#F0F0F0]/80' : 'text-muted'}`}>
-                        <Check size={15} strokeWidth={1.6} className={`mt-[0.35rem] shrink-0 ${p.featured ? 'text-[#E5C158]' : 'text-gold'}`} />
+                      <li key={i} className={`flex gap-3 ${p.featured ? 'text-ondeep/80' : 'text-muted'}`}>
+                        <Check size={15} strokeWidth={1.6} className={`mt-[0.35rem] shrink-0 ${p.featured ? 'text-accentdeep' : 'text-accent'}`} />
                         <span>{inc}</span>
                       </li>
                     ))}
@@ -105,7 +105,7 @@ export default function Packages({ data = {}, onSelect }) {
                     href="#contact"
                     onClick={() => onSelect?.(p.name)}
                     className={`btn mt-10 w-full ${
-                      p.featured ? 'bg-[#E5C158] text-[#0D0D0D] hover:bg-[#F0F0F0]' : 'border border-ink/20 text-ink hover:border-gold hover:bg-gold hover:text-[#0D0D0D]'
+                      p.featured ? 'bg-accentdeep text-deep hover:bg-ondeep' : 'border border-ink/20 text-ink hover:border-accent hover:bg-accent hover:text-onaccent'
                     }`}
                   >
                     Enquire about {p.name} <ArrowUpRight size={14} />

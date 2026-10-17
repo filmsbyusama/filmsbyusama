@@ -32,12 +32,12 @@ export default function Testimonials({ items = [] }) {
         <Reveal>
           <p className="eyebrow mb-10 flex items-center justify-center gap-4">
             <span className="text-muted">05</span>
-            <span className="h-px w-10 bg-gold/60" />
+            <span className="h-px w-10 bg-accent/60" />
             Kind Words
           </p>
         </Reveal>
 
-        <span className="block select-none text-[7rem] leading-[0.5] text-gold/70 sm:text-[10rem]" aria-hidden>
+        <span className="block select-none text-[7rem] leading-[0.5] text-accent/70 sm:text-[10rem]" aria-hidden>
           “
         </span>
 
@@ -68,7 +68,7 @@ export default function Testimonials({ items = [] }) {
                 {t.quote}
               </blockquote>
               <figcaption className="mt-10">
-                <p className="text-2xl italic text-gold">{t.name}</p>
+                <p className="text-2xl italic text-accent">{t.name}</p>
                 {t.event && <p className="mt-1 text-[0.65rem] uppercase tracking-[0.3em] text-muted">{t.event}</p>}
               </figcaption>
             </motion.figure>
@@ -77,7 +77,7 @@ export default function Testimonials({ items = [] }) {
 
         {count > 1 && (
           <div className="mt-12 flex items-center justify-center gap-8">
-            <button type="button" onClick={() => go(-1)} aria-label="Previous review" className="flex h-11 w-11 items-center justify-center rounded-full border border-line/20 transition-colors hover:border-gold hover:text-gold">
+            <button type="button" onClick={() => go(-1)} aria-label="Previous review" className="flex h-11 w-11 items-center justify-center rounded-full border border-line/20 transition-colors hover:border-accent hover:text-accent">
               <ArrowLeft size={16} strokeWidth={1.4} />
             </button>
             <div className="flex items-center gap-2.5">
@@ -92,7 +92,7 @@ export default function Testimonials({ items = [] }) {
                   {n === i && (
                     <motion.span
                       key={`${i}-${paused}`}
-                      className="absolute inset-y-0 left-0 bg-gold"
+                      className="absolute inset-y-0 left-0 bg-accent"
                       initial={{ width: paused ? '100%' : '0%' }}
                       animate={{ width: '100%' }}
                       transition={{ duration: paused ? 0 : INTERVAL / 1000, ease: 'linear' }}
@@ -101,7 +101,7 @@ export default function Testimonials({ items = [] }) {
                 </button>
               ))}
             </div>
-            <button type="button" onClick={() => go(1)} aria-label="Next review" className="flex h-11 w-11 items-center justify-center rounded-full border border-line/20 transition-colors hover:border-gold hover:text-gold">
+            <button type="button" onClick={() => go(1)} aria-label="Next review" className="flex h-11 w-11 items-center justify-center rounded-full border border-line/20 transition-colors hover:border-accent hover:text-accent">
               <ArrowRight size={16} strokeWidth={1.4} />
             </button>
           </div>

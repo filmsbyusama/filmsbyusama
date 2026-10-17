@@ -24,7 +24,7 @@ export default function Hero({ settings = {}, onPlayReel }) {
   const title = settings.tagline || 'Capturing Timeless Love Stories';
 
   return (
-    <section id="home" ref={ref} className="relative h-[100svh] min-h-[620px] overflow-hidden bg-[#0D0D0D]" style={{ perspective: 1200 }}>
+    <section id="home" ref={ref} className="relative h-[100svh] min-h-[620px] overflow-hidden bg-deep" style={{ perspective: 1200 }}>
       {/* Media plane */}
       <motion.div
         style={{ rotateX, scale, y, borderRadius: radius, transformOrigin: '50% 100%' }}
@@ -59,7 +59,7 @@ export default function Hero({ settings = {}, onPlayReel }) {
         )}
 
         {/* Cinematic overlays */}
-        <motion.div style={{ opacity: overlay }} className="absolute inset-0 bg-[#0D0D0D]" />
+        <motion.div style={{ opacity: overlay }} className="absolute inset-0 bg-deep" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80" />
         <div className="grain absolute inset-0 overflow-hidden" />
       </motion.div>
@@ -73,12 +73,12 @@ export default function Hero({ settings = {}, onPlayReel }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease, delay: 0.6 }}
-          className="eyebrow mb-6 flex items-center gap-4 !text-[#E5C158]"
+          className="eyebrow mb-6 flex items-center gap-4 !text-accentdeep"
         >
-          <span className="h-px w-10 bg-[#E5C158]/70" /> Wedding Films &amp; Photography
+          <span className="h-px w-10 bg-accentdeep/70" /> Wedding Films &amp; Photography
         </motion.p>
 
-        <h1 className="display max-w-5xl text-[3.1rem] text-[#F0F0F0] sm:text-7xl md:text-8xl lg:text-[8.5rem]">
+        <h1 className="display max-w-5xl text-[3.1rem] text-ondeep sm:text-7xl md:text-8xl lg:text-[8.5rem]">
           <SplitWords text={title} inView={false} delay={0.75} />
         </h1>
 
@@ -87,7 +87,7 @@ export default function Hero({ settings = {}, onPlayReel }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, ease, delay: 1.4 }}
-            className="max-w-md text-[1.05rem] leading-relaxed text-[#F0F0F0]/75"
+            className="max-w-md text-[1.05rem] leading-relaxed text-ondeep/75"
           >
             {settings.heroSubtitle}
           </motion.p>
@@ -98,14 +98,14 @@ export default function Hero({ settings = {}, onPlayReel }) {
             transition={{ duration: 1.1, ease, delay: 1.6 }}
             className="flex flex-wrap items-center gap-4"
           >
-            <button type="button" onClick={onPlayReel} className="group flex items-center gap-4 text-[#F0F0F0]">
-              <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-[#F0F0F0]/40 transition-all duration-500 group-hover:scale-110 group-hover:border-[#E5C158]">
-                <span className="absolute inset-0 animate-ping rounded-full border border-[#E5C158]/40 [animation-duration:2.5s]" />
+            <button type="button" onClick={onPlayReel} className="group flex items-center gap-4 text-ondeep">
+              <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-ondeep/40 transition-all duration-500 group-hover:scale-110 group-hover:border-accentdeep">
+                <span className="absolute inset-0 animate-ping rounded-full border border-accentdeep/40 [animation-duration:2.5s]" />
                 <Play size={16} className="translate-x-[1px] fill-current" />
               </span>
               <span className="text-[0.7rem] uppercase tracking-[0.28em]">Watch the reel</span>
             </button>
-            <a href="#contact" className="btn bg-[#E5C158] text-[#0D0D0D] hover:bg-[#F0F0F0]">
+            <a href="#contact" className="btn bg-accentdeep text-deep hover:bg-ondeep">
               Check your date
             </a>
           </motion.div>
@@ -116,11 +116,11 @@ export default function Hero({ settings = {}, onPlayReel }) {
       <motion.a
         href="#films"
         style={{ opacity: contentOpacity }}
-        className="absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 text-[#F0F0F0]/70 sm:flex"
+        className="absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-3 text-ondeep/70 sm:flex"
         aria-label="Scroll to films"
       >
-        <span className="flex h-10 w-6 justify-center rounded-full border border-[#F0F0F0]/40 pt-2">
-          <span className="block h-2 w-px animate-scrolldot bg-[#E5C158]" />
+        <span className="flex h-10 w-6 justify-center rounded-full border border-ondeep/40 pt-2">
+          <span className="block h-2 w-px animate-scrolldot bg-accentdeep" />
         </span>
         <span className="text-[0.6rem] uppercase tracking-[0.4em]">Scroll</span>
       </motion.a>
@@ -130,7 +130,7 @@ export default function Hero({ settings = {}, onPlayReel }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 right-12 z-10 hidden text-[0.65rem] uppercase tracking-[0.3em] text-[#F0F0F0]/60 lg:block"
+          className="absolute bottom-8 right-12 z-10 hidden text-[0.65rem] uppercase tracking-[0.3em] text-ondeep/60 lg:block"
         >
           {settings.location}
         </motion.p>

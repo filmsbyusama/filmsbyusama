@@ -10,14 +10,14 @@ export default function ThemeToggle({ theme, toggle, className = '' }) {
       role="switch"
       aria-checked={dark}
       aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
-      className={`relative flex h-8 w-[3.75rem] items-center rounded-full border border-line/15 bg-surface/70 px-1 transition-colors duration-500 hover:border-gold/60 ${className}`}
+      className={`relative flex h-8 w-[3.75rem] items-center rounded-full border border-line/15 bg-surface/70 px-1 transition-colors duration-500 hover:border-accent/60 ${className}`}
     >
       <Sun size={12} strokeWidth={1.6} className="absolute left-[0.55rem] text-muted" aria-hidden />
       <Moon size={12} strokeWidth={1.6} className="absolute right-[0.55rem] text-muted" aria-hidden />
       <motion.span
         layout
         transition={{ type: 'spring', stiffness: 500, damping: 34 }}
-        className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-gold text-[#0D0D0D] shadow-[0_2px_10px_rgba(0,0,0,0.2)] ${dark ? 'ml-auto' : ''}`}
+        className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-onaccent shadow-[0_2px_10px_rgba(0,0,0,0.2)] ${dark ? 'ml-auto' : ''}`}
       >
         <motion.span
           key={theme}

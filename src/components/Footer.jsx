@@ -30,7 +30,7 @@ export default function Footer({ settings = {} }) {
             <ul className="grid grid-cols-2 gap-y-2.5 md:grid-cols-1">
               {NAV.map(({ id, label }) => (
                 <li key={id}>
-                  <a href={`#${id}`} className="text-muted transition-colors hover:text-gold">
+                  <a href={`#${id}`} className="text-muted transition-colors hover:text-accent">
                     {label}
                   </a>
                 </li>
@@ -47,14 +47,14 @@ export default function Footer({ settings = {} }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-line/15 text-ink transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:text-gold"
+                  className="flex h-12 w-12 items-center justify-center rounded-full border border-line/15 text-ink transition-all duration-500 hover:-translate-y-1 hover:border-accent hover:text-accent"
                 >
                   <Icon />
                 </a>
               ))}
             </div>
             {settings.email && (
-              <a href={`mailto:${settings.email}`} className="mt-6 block text-xl transition-colors hover:text-gold">
+              <a href={`mailto:${settings.email}`} className="mt-6 block text-xl transition-colors hover:text-accent">
                 {settings.email}
               </a>
             )}
@@ -80,7 +80,7 @@ export default function Footer({ settings = {} }) {
             <a href="/admin/" className="opacity-40 transition-opacity hover:opacity-100" rel="nofollow">
               Studio
             </a>
-            <a href="#home" className="flex items-center gap-2 transition-colors hover:text-gold">
+            <a href="#home" className="flex items-center gap-2 transition-colors hover:text-accent">
               Back to top <ArrowUp size={12} />
             </a>
           </div>

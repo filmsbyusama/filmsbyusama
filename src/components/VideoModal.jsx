@@ -53,21 +53,21 @@ export default function VideoModal({ video, onClose }) {
                   className="absolute inset-0 h-full w-full border-0"
                 />
               ) : (
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center text-[#F0F0F0]">
-                  <Film size={28} strokeWidth={1.2} className="text-[#E5C158]" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-6 text-center text-ondeep">
+                  <Film size={28} strokeWidth={1.2} className="text-accentdeep" />
                   <p className="text-2xl">This film is coming soon</p>
-                  <p className="max-w-sm text-sm text-[#F0F0F0]/60">
-                    Studio tip: open <span className="text-[#E5C158]">/admin</span> → Films and paste a YouTube link to publish it here.
+                  <p className="max-w-sm text-sm text-ondeep/60">
+                    Studio tip: open <span className="text-accentdeep">/admin</span> → Films and paste a YouTube link to publish it here.
                   </p>
                 </div>
               )}
             </div>
 
-            <div className="flex items-center justify-between gap-4 px-2 pb-1 pt-3 text-[#F0F0F0] sm:px-3">
+            <div className="flex items-center justify-between gap-4 px-2 pb-1 pt-3 text-ondeep sm:px-3">
               <div className="min-w-0">
                 <p className="truncate text-lg leading-tight sm:text-xl">{video.title}</p>
                 {(video.couple || video.location) && (
-                  <p className="truncate text-[0.68rem] uppercase tracking-[0.26em] text-[#F0F0F0]/55">
+                  <p className="truncate text-[0.68rem] uppercase tracking-[0.26em] text-ondeep/55">
                     {[video.couple, video.location].filter(Boolean).join(' · ')}
                   </p>
                 )}
@@ -76,7 +76,7 @@ export default function VideoModal({ video, onClose }) {
                 type="button"
                 onClick={onClose}
                 aria-label="Close video"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 transition-all duration-300 hover:rotate-90 hover:border-[#E5C158] hover:text-[#E5C158]"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 transition-all duration-300 hover:rotate-90 hover:border-accentdeep hover:text-accentdeep"
               >
                 <X size={18} strokeWidth={1.5} />
               </button>

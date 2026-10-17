@@ -64,15 +64,15 @@ export default function Contact({ settings = {}, packages = [], currency = 'PKR'
   };
 
   return (
-    <section id="contact" className="relative scroll-mt-20 overflow-hidden bg-[#0D0D0D] py-28 text-[#F0F0F0] md:py-40">
-      <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-[#E5C158]/10 blur-[120px]" aria-hidden />
+    <section id="contact" className="relative scroll-mt-20 overflow-hidden bg-deep py-28 text-ondeep md:py-40">
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-accentdeep/10 blur-[120px]" aria-hidden />
       <div className="relative mx-auto grid max-w-[1400px] gap-16 px-5 sm:px-8 lg:grid-cols-12 lg:gap-20 lg:px-12">
         {/* Left: invitation + direct contact */}
         <div className="lg:col-span-5">
           <Reveal>
-            <p className="eyebrow mb-5 flex items-center gap-4 !text-[#E5C158]">
-              <span className="text-[#F0F0F0]/40">06</span>
-              <span className="h-px w-10 bg-[#E5C158]/60" />
+            <p className="eyebrow mb-5 flex items-center gap-4 !text-accentdeep">
+              <span className="text-ondeep/40">06</span>
+              <span className="h-px w-10 bg-accentdeep/60" />
               Contact &amp; Booking
             </p>
           </Reveal>
@@ -80,7 +80,7 @@ export default function Contact({ settings = {}, packages = [], currency = 'PKR'
             <SplitWords text="Let's tell your story" />
           </h2>
           <Reveal delay={0.15}>
-            <p className="mt-8 max-w-md text-[#F0F0F0]/65">
+            <p className="mt-8 max-w-md text-ondeep/65">
               We take a limited number of weddings each season so every couple gets our full attention. Share a few details and we'll reply within 24 hours.
             </p>
           </Reveal>
@@ -91,7 +91,7 @@ export default function Contact({ settings = {}, packages = [], currency = 'PKR'
                 href={waLink(settings.whatsapp, summary)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between border border-white/15 p-5 transition-colors duration-500 hover:border-[#E5C158]"
+                className="group flex items-center justify-between border border-white/15 p-5 transition-colors duration-500 hover:border-accentdeep"
               >
                 <span className="flex items-center gap-4">
                   <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366]/15 text-[#25D366]">
@@ -99,32 +99,32 @@ export default function Contact({ settings = {}, packages = [], currency = 'PKR'
                   </span>
                   <span>
                     <span className="block text-xl">Chat on WhatsApp</span>
-                    <span className="block text-[0.65rem] uppercase tracking-[0.24em] text-[#F0F0F0]/50">Fastest reply</span>
+                    <span className="block text-[0.65rem] uppercase tracking-[0.24em] text-ondeep/50">Fastest reply</span>
                   </span>
                 </span>
-                <ArrowUpRight size={18} className="transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#E5C158]" />
+                <ArrowUpRight size={18} className="transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accentdeep" />
               </a>
             )}
             {settings.email && (
               <a
                 href={`mailto:${settings.email}?subject=${encodeURIComponent('Wedding inquiry')}&body=${encodeURIComponent(summary)}`}
-                className="group flex items-center justify-between border border-white/15 p-5 transition-colors duration-500 hover:border-[#E5C158]"
+                className="group flex items-center justify-between border border-white/15 p-5 transition-colors duration-500 hover:border-accentdeep"
               >
                 <span className="flex items-center gap-4">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E5C158]/15 text-[#E5C158]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-accentdeep/15 text-accentdeep">
                     <Mail size={18} strokeWidth={1.5} />
                   </span>
                   <span>
                     <span className="block text-xl">{settings.email}</span>
-                    <span className="block text-[0.65rem] uppercase tracking-[0.24em] text-[#F0F0F0]/50">Email us</span>
+                    <span className="block text-[0.65rem] uppercase tracking-[0.24em] text-ondeep/50">Email us</span>
                   </span>
                 </span>
-                <ArrowUpRight size={18} className="transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-[#E5C158]" />
+                <ArrowUpRight size={18} className="transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accentdeep" />
               </a>
             )}
             {settings.location && (
-              <p className="flex items-center gap-3 pt-4 text-sm text-[#F0F0F0]/55">
-                <MapPin size={15} strokeWidth={1.4} className="text-[#E5C158]" /> {settings.location}
+              <p className="flex items-center gap-3 pt-4 text-sm text-ondeep/55">
+                <MapPin size={15} strokeWidth={1.4} className="text-accentdeep" /> {settings.location}
               </p>
             )}
           </Reveal>
@@ -132,7 +132,7 @@ export default function Contact({ settings = {}, packages = [], currency = 'PKR'
 
         {/* Right: inquiry form */}
         <Reveal delay={0.1} className="lg:col-span-7">
-          <div className="relative rounded-sm border border-white/10 bg-white/[0.03] p-6 [color-scheme:dark] backdrop-blur-xl sm:p-10 [&_.field]:border-white/20 [&_.field]:text-[#F0F0F0] [&_.field]:placeholder:text-[#F0F0F0]/35 [&_.field-label]:text-[#F0F0F0]/50 [&_option]:bg-[#0D0D0D]">
+          <div className="relative rounded-sm border border-white/10 bg-white/[0.03] p-6 [color-scheme:dark] backdrop-blur-xl sm:p-10 [&_.field]:border-white/20 [&_.field]:text-ondeep [&_.field]:placeholder:text-ondeep/35 [&_.field-label]:text-ondeep/50 [&_option]:bg-deep">
             <AnimatePresence mode="wait">
               {status === 'sent' ? (
                 <motion.div
@@ -142,12 +142,12 @@ export default function Contact({ settings = {}, packages = [], currency = 'PKR'
                   transition={{ duration: 0.8, ease }}
                   className="flex min-h-[420px] flex-col items-center justify-center text-center"
                 >
-                  <span className="text-6xl italic text-[#E5C158]">Thank you.</span>
-                  <p className="mt-5 max-w-sm text-[#F0F0F0]/65">
+                  <span className="text-6xl italic text-accentdeep">Thank you.</span>
+                  <p className="mt-5 max-w-sm text-ondeep/65">
                     Your inquiry is with us. We'll be in touch within 24 hours — or continue on WhatsApp for a quicker reply.
                   </p>
                   {settings.whatsapp && (
-                    <a href={waLink(settings.whatsapp, summary)} target="_blank" rel="noopener noreferrer" className="btn mt-8 bg-[#E5C158] text-[#0D0D0D] hover:bg-[#F0F0F0]">
+                    <a href={waLink(settings.whatsapp, summary)} target="_blank" rel="noopener noreferrer" className="btn mt-8 bg-accentdeep text-deep hover:bg-ondeep">
                       Continue on WhatsApp
                     </a>
                   )}
@@ -225,14 +225,14 @@ export default function Contact({ settings = {}, packages = [], currency = 'PKR'
                   </label>
 
                   <div className="flex flex-col gap-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
-                    <button type="submit" disabled={status === 'sending'} className="btn bg-[#E5C158] text-[#0D0D0D] hover:bg-[#F0F0F0] disabled:opacity-60">
+                    <button type="submit" disabled={status === 'sending'} className="btn bg-accentdeep text-deep hover:bg-ondeep disabled:opacity-60">
                       {status === 'sending' ? <Loader2 size={14} className="animate-spin" /> : null}
                       {status === 'sending' ? 'Sending' : 'Send inquiry'}
                     </button>
                     {status === 'error' && (
-                      <p className="text-sm text-[#F0F0F0]/70">
+                      <p className="text-sm text-ondeep/70">
                         Couldn't send just now —{' '}
-                        <a className="text-[#E5C158] underline underline-offset-4" href={waLink(settings.whatsapp, summary)} target="_blank" rel="noopener noreferrer">
+                        <a className="text-accentdeep underline underline-offset-4" href={waLink(settings.whatsapp, summary)} target="_blank" rel="noopener noreferrer">
                           send it on WhatsApp
                         </a>{' '}
                         instead.

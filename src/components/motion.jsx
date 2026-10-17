@@ -121,7 +121,7 @@ export function SmartImage({ src, fallbacks = [], alt = '', className = '', labe
   if (!sources.length || i >= sources.length) {
     return (
       <div
-        className={`${className} flex items-center justify-center bg-gradient-to-br from-gold/25 via-surface to-ink/10`}
+        className={`${className} flex items-center justify-center bg-gradient-to-br from-accent/25 via-surface to-ink/10`}
         role="img"
         aria-label={alt}
       >
@@ -154,7 +154,7 @@ export function SectionHeading({ index, eyebrow, title, children, align = 'left'
         <Reveal>
           <p className="eyebrow mb-5 flex items-center gap-4 justify-start">
             {index && <span className="text-muted">{index}</span>}
-            <span className="h-px w-10 bg-gold/60" />
+            <span className="h-px w-10 bg-accent/60" />
             <span>{eyebrow}</span>
           </p>
         </Reveal>

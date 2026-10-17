@@ -38,7 +38,7 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
     <AnimatePresence>
       {open && photo && (
         <motion.div
-          className="fixed inset-0 z-[100] flex flex-col bg-[#0D0D0D]/95 text-[#F0F0F0] backdrop-blur-xl"
+          className="fixed inset-0 z-[100] flex flex-col bg-deep/95 text-ondeep backdrop-blur-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -48,14 +48,14 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
           aria-label="Photo viewer"
         >
           <div className="flex items-center justify-between px-5 py-4 sm:px-8">
-            <span className="text-[0.7rem] uppercase tracking-[0.3em] text-[#F0F0F0]/60">
+            <span className="text-[0.7rem] uppercase tracking-[0.3em] text-ondeep/60">
               {String(index + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}
             </span>
             <button
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 hover:rotate-90 hover:border-[#E5C158] hover:text-[#E5C158]"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 hover:rotate-90 hover:border-accentdeep hover:text-accentdeep"
             >
               <X size={18} strokeWidth={1.5} />
             </button>
@@ -95,7 +95,7 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
                   type="button"
                   onClick={() => go(-1)}
                   aria-label="Previous photo"
-                  className="absolute left-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur transition-colors hover:border-[#E5C158] hover:text-[#E5C158] sm:flex"
+                  className="absolute left-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur transition-colors hover:border-accentdeep hover:text-accentdeep sm:flex"
                 >
                   <ChevronLeft size={20} strokeWidth={1.4} />
                 </button>
@@ -103,7 +103,7 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
                   type="button"
                   onClick={() => go(1)}
                   aria-label="Next photo"
-                  className="absolute right-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur transition-colors hover:border-[#E5C158] hover:text-[#E5C158] sm:flex"
+                  className="absolute right-3 top-1/2 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur transition-colors hover:border-accentdeep hover:text-accentdeep sm:flex"
                 >
                   <ChevronRight size={20} strokeWidth={1.4} />
                 </button>
@@ -113,7 +113,7 @@ export default function Lightbox({ photos, index, onClose, onIndex }) {
 
           <div className="px-5 py-6 text-center sm:px-8">
             {photo.caption && <p className="text-2xl">{photo.caption}</p>}
-            {photo.couple && <p className="mt-1 text-[0.68rem] uppercase tracking-[0.3em] text-[#E5C158]">{photo.couple}</p>}
+            {photo.couple && <p className="mt-1 text-[0.68rem] uppercase tracking-[0.3em] text-accentdeep">{photo.couple}</p>}
           </div>
         </motion.div>
       )}

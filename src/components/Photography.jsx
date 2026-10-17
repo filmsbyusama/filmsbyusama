@@ -44,11 +44,11 @@ export default function Photography({ photos = [] }) {
                       }`}
                     />
                     <div className="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/70 via-transparent to-transparent p-5 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
-                      <div className="translate-y-3 text-left text-[#F0F0F0] transition-transform duration-700 group-hover:translate-y-0">
+                      <div className="translate-y-3 text-left text-ondeep transition-transform duration-700 group-hover:translate-y-0">
                         {p.caption && <p className="text-xl leading-tight">{p.caption}</p>}
-                        {p.couple && <p className="text-[0.62rem] uppercase tracking-[0.3em] text-[#E5C158]">{p.couple}</p>}
+                        {p.couple && <p className="text-[0.62rem] uppercase tracking-[0.3em] text-accentdeep">{p.couple}</p>}
                       </div>
-                      <Expand size={16} strokeWidth={1.4} className="text-[#F0F0F0]" />
+                      <Expand size={16} strokeWidth={1.4} className="text-ondeep" />
                     </div>
                   </button>
                 </TiltCard>

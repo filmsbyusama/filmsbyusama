@@ -59,12 +59,12 @@ export default function Navbar({ theme, toggle, brand = 'filmsbyusama', ready = 
           <a
             href="#home"
             className={`text-[1.55rem] leading-none tracking-[0.01em] transition-colors duration-500 ${
-              onHero ? 'text-[#F0F0F0]' : 'text-ink'
+              onHero ? 'text-ondeep' : 'text-ink'
             }`}
             aria-label={`${brand} — home`}
           >
             {brand}
-            <span className="text-gold">.</span>
+            <span className="text-accent">.</span>
           </a>
 
           <ul className="hidden items-center gap-9 lg:flex">
@@ -73,14 +73,14 @@ export default function Navbar({ theme, toggle, brand = 'filmsbyusama', ready = 
                 <a
                   href={`#${id}`}
                   className={`group relative py-2 text-[0.7rem] uppercase tracking-[0.26em] transition-colors duration-300 ${
-                    onHero ? 'text-[#F0F0F0]/80 hover:text-[#F0F0F0]' : 'text-ink/70 hover:text-ink'
-                  } ${active === id ? (onHero ? '!text-[#F0F0F0]' : '!text-ink') : ''}`}
+                    onHero ? 'text-ondeep/80 hover:text-ondeep' : 'text-ink/70 hover:text-ink'
+                  } ${active === id ? (onHero ? '!text-ondeep' : '!text-ink') : ''}`}
                 >
                   {label}
                   {active === id ? (
-                    <motion.span layoutId="nav-underline" className="absolute -bottom-0.5 left-0 right-0 h-px bg-gold" />
+                    <motion.span layoutId="nav-underline" className="absolute -bottom-0.5 left-0 right-0 h-px bg-accent" />
                   ) : (
-                    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-gold/70 transition-all duration-500 group-hover:w-full" />
+                    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-accent/70 transition-all duration-500 group-hover:w-full" />
                   )}
                 </a>
               </li>
@@ -90,7 +90,7 @@ export default function Navbar({ theme, toggle, brand = 'filmsbyusama', ready = 
           <div className="flex items-center gap-4">
             <ThemeToggle theme={theme} toggle={toggle} />
             <a href="#contact" className={`hidden sm:inline-flex btn !px-5 !py-2.5 border transition-colors duration-500 ${
-              onHero ? 'border-[#F0F0F0]/40 text-[#F0F0F0] hover:border-gold hover:text-gold' : 'border-ink/25 text-ink hover:border-gold hover:text-gold'
+              onHero ? 'border-ondeep/40 text-ondeep hover:border-accent hover:text-accent' : 'border-ink/25 text-ink hover:border-accent hover:text-accent'
             }`}>
               Book
             </a>
@@ -106,7 +106,7 @@ export default function Navbar({ theme, toggle, brand = 'filmsbyusama', ready = 
                   key={i}
                   animate={open ? { rotate: i ? -45 : 45, y: i ? -3.5 : 3.5 } : { rotate: 0, y: 0 }}
                   transition={{ duration: 0.5, ease }}
-                  className={`block h-px w-6 ${onHero ? 'bg-[#F0F0F0]' : 'bg-ink'}`}
+                  className={`block h-px w-6 ${onHero ? 'bg-ondeep' : 'bg-ink'}`}
                 />
               ))}
             </button>
@@ -137,7 +137,7 @@ export default function Navbar({ theme, toggle, brand = 'filmsbyusama', ready = 
                     onClick={() => setOpen(false)}
                     className="flex items-baseline gap-4 py-1 text-5xl text-ink"
                   >
-                    <span className="text-xs text-gold">0{i + 1}</span>
+                    <span className="text-xs text-accent">0{i + 1}</span>
                     {label}
                   </a>
                 </motion.li>

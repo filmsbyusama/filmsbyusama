@@ -14,7 +14,7 @@ export default function Marquee() {
         {row.map((w, i) => (
           <span key={i} className="flex items-center text-4xl italic text-ink/80 sm:text-6xl">
             <span className="px-8">{w}</span>
-            <span className="text-2xl text-gold">✦</span>
+            <span className="text-2xl text-accent">✦</span>
           </span>
         ))}
       </motion.div>
