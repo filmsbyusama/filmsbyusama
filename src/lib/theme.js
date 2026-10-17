@@ -16,7 +16,7 @@ export function useTheme() {
       /* storage unavailable (private mode) — theme still works for this visit */
     }
     const meta = document.querySelectorAll('meta[name="theme-color"]');
-    meta.forEach((m) => m.setAttribute('content', theme === 'dark' ? '#0D0D0D' : '#FDFBF7'));
+    meta.forEach((m) => m.setAttribute('content', theme === 'dark' ? '#111412' : '#F5F3EE'));
   }, [theme]);
 
   const toggle = useCallback(() => setTheme((t) => (t === 'dark' ? 'light' : 'dark')), []);
