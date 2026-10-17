@@ -34,23 +34,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme tokens (RGB triplets so Tailwind opacity modifiers work: bg-gold/20) */
+/* ------------------------------------------------------------------
+   Palette: SAGE & LINEN
+   Every colour on the site comes from these tokens. To re-theme the
+   whole site, change the values here (RGB triplets so Tailwind opacity
+   modifiers like bg-accent/20 work). All text pairs pass WCAG AA.
+
+   bg          page background
+   surface     cards / alternate sections
+   ink         main text
+   muted       secondary text
+   line        hairlines (used at low opacity)
+   accent      buttons, links, eyebrows      on-accent  text on accent buttons
+   deep        always-dark sections (hero, contact, pop-ups, featured package)
+   on-deep     text on deep                  accent-deep accent on deep
+   ------------------------------------------------------------------ */
 :root {
-  --bg: 253 251 247;       /* #FDFBF7 ivory */
-  --surface: 246 241 232;  /* slightly deeper ivory for cards */
-  --ink: 26 26 26;         /* #1A1A1A charcoal */
-  --muted: 106 99 90;      /* warm grey */
-  --line: 26 26 26;        /* used at low opacity */
-  --gold: 212 175 55;      /* #D4AF37 champagne */
+  --bg: 245 243 238;          /* #F5F3EE linen */
+  --surface: 236 233 225;     /* #ECE9E1 warm stone */
+  --ink: 30 35 32;            /* #1E2320 forest ink */
+  --muted: 95 102 95;         /* #5F665F moss grey */
+  --line: 30 35 32;
+  --accent: 90 107 81;        /* #5A6B51 sage */
+  --on-accent: 245 243 238;   /* #F5F3EE */
+  --deep: 22 26 23;           /* #161A17 deep forest */
+  --on-deep: 236 238 233;     /* #ECEEE9 */
+  --accent-deep: 169 188 154; /* #A9BC9A light sage */
   color-scheme: light;
 }
 .dark {
-  --bg: 13 13 13;          /* #0D0D0D obsidian */
-  --surface: 22 21 20;
-  --ink: 240 240 240;      /* #F0F0F0 */
-  --muted: 160 154 145;
-  --line: 240 240 240;
-  --gold: 229 193 88;      /* #E5C158 muted gold */
+  --bg: 17 20 18;             /* #111412 */
+  --surface: 26 30 27;        /* #1A1E1B */
+  --ink: 236 238 233;         /* #ECEEE9 */
+  --muted: 156 163 155;       /* #9CA39B */
+  --line: 236 238 233;
+  --accent: 169 188 154;      /* #A9BC9A */
+  --on-accent: 17 20 18;      /* #111412 */
+  --deep: 12 15 13;           /* #0C0F0D */
+  --on-deep: 236 238 233;     /* #ECEEE9 */
+  --accent-deep: 169 188 154; /* #A9BC9A */
   color-scheme: dark;
 }
 
@@ -67,17 +89,17 @@
     overflow-x: hidden;
   }
   ::selection {
-    @apply bg-gold/30 text-ink;
+    @apply bg-accent/30 text-ink;
   }
   img { @apply select-none; }
   :focus-visible {
-    @apply outline-none ring-1 ring-gold ring-offset-2 ring-offset-bg;
+    @apply outline-none ring-1 ring-accent ring-offset-2 ring-offset-bg;
   }
 }
 
 @layer components {
   .eyebrow {
-    @apply text-[0.7rem] uppercase tracking-editorial text-gold;
+    @apply text-[0.7rem] uppercase tracking-editorial text-accent;
   }
   .display {
     @apply font-normal leading-[1.05] tracking-[-0.01em];
@@ -91,14 +113,14 @@
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[0.72rem] uppercase tracking-[0.28em] transition-all duration-500 ease-cinematic;
   }
-  .btn-gold {
-    @apply btn bg-gold text-[#0D0D0D] hover:bg-ink hover:text-bg;
+  .btn-accent {
+    @apply btn bg-accent text-onaccent hover:bg-ink hover:text-bg;
   }
   .btn-ghost {
-    @apply btn border border-ink/25 text-ink hover:border-gold hover:text-gold;
+    @apply btn border border-ink/25 text-ink hover:border-accent hover:text-accent;
   }
   .field {
-    @apply w-full bg-transparent border-0 border-b border-line/20 px-0 py-3 text-ink placeholder:text-muted/70 focus:border-gold focus:ring-0 transition-colors duration-300;
+    @apply w-full bg-transparent border-0 border-b border-line/20 px-0 py-3 text-ink placeholder:text-muted/70 focus:border-accent focus:ring-0 transition-colors duration-300;
   }
   .field-label {
     @apply block text-[0.68rem] uppercase tracking-[0.26em] text-muted mb-1;

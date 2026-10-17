@@ -51,7 +51,7 @@ export default function App() {
     <>
       <Preloader show={!(ready && minTimeDone)} brand={brand} />
 
-      <motion.div style={{ scaleX: progress }} className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gold" aria-hidden />
+      <motion.div style={{ scaleX: progress }} className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-accent" aria-hidden />
 
       <Navbar theme={theme} toggle={toggle} brand={brand} ready={ready && minTimeDone} />
 
