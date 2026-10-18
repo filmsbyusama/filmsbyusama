@@ -1,22 +1,31 @@
 {
   "studioName": "filmsbyusama",
-  "tagline": "Capturing Timeless Love Stories",
-  "heroSubtitle": "Cinematic wedding films & editorial photography — for couples who want to feel it all again, years from now.",
-  "heroYoutube": "",
   "heroImage": "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80",
-  "location": "Based in Rawalpindi · Islamabad — available worldwide",
-  "email": "hello@filmsbyusama.com",
-  "whatsapp": "923000000000",
-  "instagram": "https://instagram.com/filmsbyusama",
   "youtube": "https://youtube.com/@filmsbyusama",
   "vimeo": "https://vimeo.com/filmsbyusama",
-  "tiktok": "https://tiktok.com/@filmsbyusama",
+  "heroYoutube": "",
   "aboutTitle": "We don't film weddings. We film the feeling of them.",
-  "aboutText": "filmsbyusama began with a single camera and a belief that the quiet moments — a father fixing his daughter's dupatta, a glance across a crowded mehndi — are the ones that matter most.\n\nEvery film is directed like a short feature: we listen to your story first, then shape the day's light, sound and rhythm around it. No stiff poses, no checklists. Just honest, cinematic storytelling you'll want to watch on every anniversary.",
   "aboutImage": "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1400&q=80",
+  "tagline": "Capturing Timeless Love Stories",
+  "whatsapp": "923334304066",
+  "heroSubtitle": "Cinematic wedding films & editorial photography — for couples who want to feel it all again, years from now.",
+  "instagram": "https://instagram.com/filmsbyusama",
+  "location": "Based in Rawalpindi · Islamabad — available worldwide",
+  "tiktok": "",
+  "aboutText": "filmsbyusama began with a single camera and a belief that the quiet moments — a father fixing his daughter's dupatta, a glance across a crowded mehndi — are the ones that matter most.\n\nEvery film is directed like a short feature: we listen to your story first, then shape the day's light, sound and rhythm around it. No stiff poses, no checklists. Just honest, cinematic storytelling you'll want to watch on every anniversary.",
+  "email": "hello@filmsbyusama.com",
   "stats": [
-    { "value": "250+", "label": "Weddings filmed" },
-    { "value": "9", "label": "Years behind the lens" },
-    { "value": "14", "label": "Cities & countries" }
+    {
+      "value": "600+",
+      "label": "Weddings filmed"
+    },
+    {
+      "value": "10",
+      "label": "Years behind the lens"
+    },
+    {
+      "value": "20+",
+      "label": "Cities & countries"
+    }
   ]
 }
