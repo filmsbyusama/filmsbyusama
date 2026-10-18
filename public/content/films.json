@@ -46,11 +46,11 @@
       "featured": true
     },
     {
-      "title": "Promise in the Hills",
-      "couple": "Iqra & Fahad",
-      "youtube": "",
+      "title": "ਅੱਖ ਕਾਸ਼ਨੀ اکھ کاشنی",
+      "couple": "Malaika & Hamza",
+      "youtube": "https://youtu.be/Tf6JY61Gcy8",
       "category": "Couples",
-      "cover": "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80",
+      "cover": "/uploads/malaika-hamza-cover.jpg",
       "location": "Nathia Gali",
       "featured": false
     }
