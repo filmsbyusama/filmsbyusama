@@ -2,6 +2,12 @@
   command = "npm run build"
   publish = "dist"
 
+  # Save credits: skip the build (and the 15-credit deploy) when a commit only
+  # touches admin-panel content or uploaded photos. The live site reads those
+  # straight from GitHub (see src/lib/content.js), so no rebuild is needed.
+  # Exit code 0 = skip, 1 = build.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)public/content' ':(exclude)public/uploads'"
+
 [build.environment]
   NODE_VERSION = "22"
 
