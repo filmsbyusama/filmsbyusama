@@ -18,7 +18,9 @@ logo_url: /favicon.svg
 
 # Uploaded images are saved into the repo and served from /uploads/...
 media_folder: public/uploads
-public_folder: /uploads
+# Full GitHub address so new uploads preview correctly in the admin panel
+# even though content-only saves no longer trigger a Netlify rebuild.
+public_folder: https://raw.githubusercontent.com/filmsbyusama/filmsbyusama/main/public/uploads
 
 slug:
   encoding: ascii
