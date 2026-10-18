@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { originalOf } from '../lib/content';
 
 export const ease = [0.22, 1, 0.36, 1];
 
@@ -114,7 +115,8 @@ export function TiltCard({ children, className = '', max = 9, glare = true, ...r
 
 /* Image with graceful fallback (next source → elegant placeholder) */
 export function SmartImage({ src, fallbacks = [], alt = '', className = '', label = '', ...rest }) {
-  const sources = [src, ...fallbacks].filter(Boolean);
+  // If a resized image can't load, fall back to the original upload
+  const sources = [src, originalOf(src), ...fallbacks].filter(Boolean);
   const [i, setI] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
