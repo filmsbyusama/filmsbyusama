@@ -37,13 +37,13 @@
       "featured": true
     },
     {
-      "title": "The Quiet Before",
-      "couple": "Sana & Ali",
-      "youtube": "",
+      "title": "A Day Of Dreams",
+      "couple": "Zoha & Rafay",
+      "youtube": "https://youtu.be/dUoLX20eKZA",
       "category": "Couples",
-      "cover": "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80",
-      "location": "Hunza",
-      "featured": false
+      "cover": "/uploads/zoha-rafay-cover.jpg",
+      "location": "Lahore",
+      "featured": true
     },
     {
       "title": "Promise in the Hills",
