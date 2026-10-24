@@ -37,6 +37,15 @@
       "featured": true
     },
     {
+      "title": "ਅੱਖ ਕਾਸ਼ਨੀ اکھ کاشنی",
+      "couple": "Malaika & Hamza",
+      "youtube": "https://youtu.be/Tf6JY61Gcy8",
+      "category": "Couples",
+      "cover": "/uploads/malaika-hamza-cover.jpg",
+      "location": "Nathia Gali",
+      "featured": false
+    },
+    {
       "title": "A Day Of Dreams",
       "couple": "Zoha & Rafay",
       "youtube": "https://youtu.be/dUoLX20eKZA",
@@ -46,13 +55,12 @@
       "featured": true
     },
     {
-      "title": "ਅੱਖ ਕਾਸ਼ਨੀ اکھ کاشنی",
-      "couple": "Malaika & Hamza",
-      "youtube": "https://youtu.be/Tf6JY61Gcy8",
-      "category": "Couples",
-      "cover": "/uploads/malaika-hamza-cover.jpg",
-      "location": "Nathia Gali",
-      "featured": false
+      "category": "Mehndi",
+      "featured": false,
+      "youtube": "https://www.youtube.com/watch?v=Xdg0AviVMxU",
+      "title": "loop moves ♾️",
+      "couple": "Ted & Annie",
+      "cover": "https://raw.githubusercontent.com/filmsbyusama/filmsbyusama/main/public/uploads/capture.jpg"
     }
   ]
 }
