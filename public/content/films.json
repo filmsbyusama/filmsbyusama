@@ -37,6 +37,14 @@
       "featured": true
     },
     {
+      "category": "Mehndi",
+      "featured": false,
+      "youtube": "https://www.youtube.com/watch?v=Xdg0AviVMxU",
+      "title": "loop moves ♾️",
+      "couple": "Ted & Annie",
+      "cover": "https://raw.githubusercontent.com/filmsbyusama/filmsbyusama/main/public/uploads/capture.jpg"
+    },
+    {
       "title": "ਅੱਖ ਕਾਸ਼ਨੀ اکھ کاشنی",
       "couple": "Malaika & Hamza",
       "youtube": "https://youtu.be/Tf6JY61Gcy8",
@@ -53,14 +61,6 @@
       "cover": "/uploads/zoha-rafay-cover.jpg",
       "location": "Lahore",
       "featured": true
-    },
-    {
-      "category": "Mehndi",
-      "featured": false,
-      "youtube": "https://www.youtube.com/watch?v=Xdg0AviVMxU",
-      "title": "loop moves ♾️",
-      "couple": "Ted & Annie",
-      "cover": "https://raw.githubusercontent.com/filmsbyusama/filmsbyusama/main/public/uploads/capture.jpg"
     }
   ]
 }
