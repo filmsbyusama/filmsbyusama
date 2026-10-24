@@ -61,6 +61,13 @@
       "cover": "/uploads/zoha-rafay-cover.jpg",
       "location": "Lahore",
       "featured": true
+    },
+    {
+      "category": "Couples",
+      "featured": false,
+      "title": "🪔",
+      "youtube": "https://youtu.be/8kGFh9hXCHU",
+      "couple": "Danish & Summan"
     }
   ]
 }
