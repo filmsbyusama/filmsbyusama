@@ -4,7 +4,7 @@
       "title": "A Spring Nikkah",
       "couple": "Minahil & Salman",
       "youtube": "https://youtu.be/jYnOA7TVxWA?si=3PGsNVfLuRYA0IMD",
-      "category": "Highlights",
+      "category": "Couples",
       "cover": "/uploads/minahil-salman-cover.jpg",
       "location": "Islamabad",
       "featured": true
@@ -22,7 +22,7 @@
       "title": "A Lifetime Begins",
       "couple": "Hafsa & Haris",
       "youtube": "https://youtu.be/x3Pyu7g1dpg?si=lYNDXLVk32Ddmrg8",
-      "category": "Highlights",
+      "category": "Couples",
       "cover": "/uploads/hafsa-haris-cover.jpg",
       "location": "Gujranwala",
       "featured": true
@@ -31,13 +31,13 @@
       "title": "A Royal Beginning",
       "couple": "Uzma & Usman",
       "youtube": "https://youtu.be/bPnlS648bcE",
-      "category": "Teasers",
+      "category": "Couples",
       "cover": "/uploads/usma-usman-cover.jpg",
       "location": "Islamabad",
       "featured": true
     },
     {
-      "category": "Mehndi",
+      "category": "Highlights",
       "featured": false,
       "youtube": "https://www.youtube.com/watch?v=Xdg0AviVMxU",
       "title": "loop moves ♾️",
