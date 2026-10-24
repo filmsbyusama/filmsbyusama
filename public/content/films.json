@@ -67,7 +67,17 @@
       "featured": false,
       "title": "🪔",
       "youtube": "https://youtu.be/8kGFh9hXCHU",
-      "couple": "Danish & Summan"
+      "couple": "Danish & Summan",
+      "location": "Islamabad"
+    },
+    {
+      "category": "Highlights",
+      "featured": false,
+      "title": "Love in Lights",
+      "couple": "Junaid & Doha",
+      "youtube": "https://youtu.be/NljSyHaa4Mw",
+      "cover": "https://raw.githubusercontent.com/filmsbyusama/filmsbyusama/main/public/uploads/junaid-doha-hl-cover2.jpg",
+      "location": "Islamabad"
     }
   ]
 }
