@@ -1,11 +1,6 @@
 {
   "items": [
     {
-      "image": "/uploads/capture.jpg",
-      "caption": "loop moves",
-      "couple": "Ted & Annie"
-    },
-    {
       "image": "https://raw.githubusercontent.com/filmsbyusama/filmsbyusama/main/public/uploads/fbu09474.jpg",
       "caption": "The details",
       "couple": "Malaika"
@@ -14,6 +9,12 @@
       "image": "/uploads/dip00779.jpg",
       "caption": "Bridal portrait",
       "couple": "Minahil"
+    },
+    {
+      "quality": "default",
+      "image": "https://raw.githubusercontent.com/filmsbyusama/filmsbyusama/main/public/uploads/fbu05229.jpeg",
+      "caption": "A Royal Romance",
+      "couple": "Irza & Shahjamal"
     }
   ]
 }
