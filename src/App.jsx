@@ -5,7 +5,7 @@ import Contact from './components/Contact';
 import Films from './components/Films';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
-import Marquee from './components/Marquee';
+import Services from './components/Services';
 import Navbar from './components/Navbar';
 import Packages from './components/Packages';
 import Photography from './components/Photography';
@@ -59,7 +59,7 @@ export default function App() {
       {ready && minTimeDone && (
       <main>
         <Hero settings={settings} onPlayReel={playReel} />
-        <Marquee />
+        <Services settings={settings} />
         <Films films={filmItems} onPlay={setVideo} />
         <Photography photos={photos.items || []} />
         <About settings={settings} />

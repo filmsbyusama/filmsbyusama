@@ -1,31 +1,13 @@
 /* ------------------------------------------------------------------
-   Queensides — self-hosted
-   Put your licensed font files in /public/fonts/ with these names:
-     Queensides.woff2  (best)   Queensides.woff   Queensides.ttf
-   Only the regular weight is needed. Light / Medium are optional.
+   Queensides — self-hosted web font (public/fonts/Queensides.woff2)
+   Trimmed to Latin characters (22 KB) so it loads instantly on phones.
+   One file covers every weight the site uses, so browsers never fall
+   back to a substitute font or fake a bold.
    ------------------------------------------------------------------ */
 @font-face {
   font-family: 'Queensides';
-  src: url('/fonts/Queensides.woff2') format('woff2'),
-       url('/fonts/Queensides.woff') format('woff'),
-       url('/fonts/Queensides.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Queensides';
-  src: url('/fonts/Queensides-Light.woff2') format('woff2'),
-       url('/fonts/Queensides-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Queensides';
-  src: url('/fonts/Queensides-Medium.woff2') format('woff2'),
-       url('/fonts/Queensides-Medium.ttf') format('truetype');
-  font-weight: 500;
+  src: url('/fonts/Queensides.woff2') format('woff2');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
