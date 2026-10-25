@@ -25,22 +25,35 @@ const EMPTY = {
   testimonials: { items: [] },
 };
 
-// Uploaded photos (public/uploads) are served from GitHub through a free
-// image CDN that resizes and compresses them, so a 15 MB camera file reaches
-// visitors as a ~300 KB WebP and costs no Netlify bandwidth.
-const IMAGE_WIDTH = 2000;
+// Uploaded photos (public/uploads) are always stored in the repo exactly as
+// uploaded. When the site shows them, each image can be delivered either as
+// the untouched original, or resized + compressed by a free image CDN
+// (wsrv.nl) — e.g. a 15 MB camera file becomes a ~300 KB WebP.
+//
+// The level is chosen per photo/film in the admin panel ("Image quality"),
+// with a site-wide default in Site Settings. Values must match config.yml.
+export const QUALITY_PRESETS = {
+  original: null, //                    exactly as uploaded
+  maximum: { q: 95, w: 3000 }, //       near-lossless, large files
+  high: { q: 90, w: 2560 }, //          crisp on big retina screens
+  balanced: { q: 82, w: 2000 }, //      recommended
+  light: { q: 70, w: 1400 }, //         fastest on mobile data
+};
+const DEFAULT_QUALITY = 'balanced';
 const UPLOAD_RE = /^(?:https:\/\/raw\.githubusercontent\.com\/[^/]+\/[^/]+\/[^/]+\/public)?\/uploads\/(.+)$/;
 
 export function uploadOriginal(path) {
   return `${RAW}/uploads/${path}`;
 }
 
-export function optimiseImage(url) {
+export function optimiseImage(url, quality = DEFAULT_QUALITY) {
   if (typeof url !== 'string') return url;
   const m = url.match(UPLOAD_RE);
   if (!m) return url;
   const original = uploadOriginal(m[1]);
-  return `https://wsrv.nl/?url=${encodeURIComponent(original)}&w=${IMAGE_WIDTH}&we&output=webp&q=82`;
+  const preset = quality in QUALITY_PRESETS ? QUALITY_PRESETS[quality] : QUALITY_PRESETS[DEFAULT_QUALITY];
+  if (!preset) return original;
+  return `https://wsrv.nl/?url=${encodeURIComponent(original)}&w=${preset.w}&we&output=webp&q=${preset.q}`;
 }
 
 // Undo optimiseImage — used as a fallback if the image CDN is ever down.
@@ -53,12 +66,15 @@ export function originalOf(url) {
   }
 }
 
-function rewriteImages(value) {
-  if (Array.isArray(value)) return value.map(rewriteImages);
+// Walks the content and rewrites every uploaded-image URL. An object's own
+// `quality` field (a photo or film) wins over the inherited default.
+function rewriteImages(value, quality) {
+  if (Array.isArray(value)) return value.map((v) => rewriteImages(v, quality));
   if (value && typeof value === 'object') {
-    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, rewriteImages(v)]));
+    const q = typeof value.quality === 'string' && value.quality !== 'default' ? value.quality : quality;
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, rewriteImages(v, q)]));
   }
-  return optimiseImage(value);
+  return optimiseImage(value, quality);
 }
 
 async function fetchJson(url) {
@@ -90,7 +106,8 @@ export function useContent() {
     Promise.all(FILES.map(load)).then((results) => {
       if (!alive) return;
       const next = { ready: true };
-      FILES.forEach((name, i) => (next[name] = rewriteImages(results[i] || EMPTY[name])));
+      const siteDefault = results[FILES.indexOf('settings')]?.imageQuality || DEFAULT_QUALITY;
+      FILES.forEach((name, i) => (next[name] = rewriteImages(results[i] || EMPTY[name], siteDefault)));
       setState(next);
     });
     return () => {
