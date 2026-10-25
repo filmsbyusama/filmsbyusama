@@ -12,8 +12,8 @@ backend:
 # `npm run dev` in another, then open http://localhost:5173/admin/
 local_backend: true
 
-site_url: https://filmsbyusamaweb.netlify.app
-display_url: https://filmsbyusamaweb.netlify.app
+site_url: https://filmsbyusama.com
+display_url: https://filmsbyusama.com
 logo_url: /favicon.svg
 
 # Uploaded images are saved into the repo and served from /uploads/...
@@ -64,6 +64,19 @@ collections:
                 hint: "Upload an image or paste an image URL. Leave empty to use the YouTube thumbnail automatically."
               - { name: location, label: "Location", widget: string, required: false }
               - { name: featured, label: "Featured (shown first, larger card)", widget: boolean, default: false }
+              - name: quality
+                label: "Image quality on the website"
+                widget: select
+                default: "default"
+                required: false
+                hint: "Your upload is always kept in full. This only controls how it's delivered to visitors — compressed versions load much faster on phones."
+                options:
+                  - { label: "Use site default", value: "default" }
+                  - { label: "Original — exactly as uploaded (largest, slowest)", value: "original" }
+                  - { label: "Maximum — 95% quality, up to 3000px", value: "maximum" }
+                  - { label: "High — 90% quality, up to 2560px", value: "high" }
+                  - { label: "Balanced — 82% quality, up to 2000px (recommended)", value: "balanced" }
+                  - { label: "Light — 70% quality, up to 1400px (fastest on mobile)", value: "light" }
 
   # ================================================================
   # PHOTO MANAGER
@@ -85,6 +98,19 @@ collections:
               - { name: image, label: "Photo", widget: image, hint: "Upload, or paste a direct image URL. Long edge ~1600px is plenty." }
               - { name: caption, label: "Caption", widget: string, required: false }
               - { name: couple, label: "Couple", widget: string, required: false }
+              - name: quality
+                label: "Image quality on the website"
+                widget: select
+                default: "default"
+                required: false
+                hint: "Your upload is always kept in full. This only controls how it's delivered to visitors — compressed versions load much faster on phones."
+                options:
+                  - { label: "Use site default", value: "default" }
+                  - { label: "Original — exactly as uploaded (largest, slowest)", value: "original" }
+                  - { label: "Maximum — 95% quality, up to 3000px", value: "maximum" }
+                  - { label: "High — 90% quality, up to 2560px", value: "high" }
+                  - { label: "Balanced — 82% quality, up to 2000px (recommended)", value: "balanced" }
+                  - { label: "Light — 70% quality, up to 1400px (fastest on mobile)", value: "light" }
 
   # ================================================================
   # PACKAGES & TESTIMONIALS
@@ -155,6 +181,17 @@ collections:
             required: false
             hint: "Plays muted on loop behind the headline. Leave empty to use the hero image."
           - { name: heroImage, label: "Hero image (shown before / instead of the reel)", widget: image }
+          - name: imageQuality
+            label: "Default image quality (hero, story portrait, and any photo set to 'Use site default')"
+            widget: select
+            default: "balanced"
+            required: false
+            options:
+              - { label: "Original — exactly as uploaded (largest, slowest)", value: "original" }
+              - { label: "Maximum — 95% quality, up to 3000px", value: "maximum" }
+              - { label: "High — 90% quality, up to 2560px", value: "high" }
+              - { label: "Balanced — 82% quality, up to 2000px (recommended)", value: "balanced" }
+              - { label: "Light — 70% quality, up to 1400px (fastest on mobile)", value: "light" }
           - { name: location, label: "Location line", widget: string, required: false }
           - { name: email, label: "Email", widget: string }
           - { name: whatsapp, label: "WhatsApp number", widget: string, hint: "Country code, digits only — e.g. 923001234567" }
@@ -165,6 +202,17 @@ collections:
           - { name: aboutTitle, label: "Story — heading", widget: string }
           - { name: aboutText, label: "Story — text", widget: text, hint: "Blank line = new paragraph" }
           - { name: aboutImage, label: "Story — portrait image", widget: image }
+          - { name: servicesTitle, label: "What we cover — heading", widget: string, required: false, default: "Every chapter, beautifully told" }
+          - name: services
+            label: "What we cover — events (band below the hero)"
+            label_singular: Event
+            widget: list
+            required: false
+            summary: "{{fields.title}}"
+            hint: "Shown as a numbered row under the hero. Six works best on large screens."
+            fields:
+              - { name: title, label: "Event", widget: string }
+              - { name: text, label: "One-line description", widget: string, required: false }
           - name: stats
             label: "Story — numbers"
             widget: list

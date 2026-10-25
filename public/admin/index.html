@@ -4,13 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
-    <title>filmsbyusama · Admin</title>
+    <title>filmsbyusama · Studio</title>
     <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/Queensides.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Sage & Linen theme for the admin panel -->
+    <link rel="stylesheet" href="/admin/admin.css?v=2" />
     <!-- Netlify Identity handles the login (free) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Decap CMS reads ./config.yml and builds the whole dashboard -->
+    <!-- Decap CMS reads ./config.yml and builds the whole dashboard.
+         Manual init lets admin.js register previews and sidebar links first. -->
+    <script>window.CMS_MANUAL_INIT = true;</script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Live previews + sidebar shortcuts -->
+    <script src="/admin/admin.js?v=2"></script>
   </body>
 </html>

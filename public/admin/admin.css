@@ -1,0 +1,252 @@
+/* ==================================================================
+   filmsbyusama — admin panel theme (Sage & Linen)
+   Restyles Decap CMS to match the website. Decap labels its parts with
+   class names like "css-1ab2c3-AppHeader"; we target those names.
+   Everything is prefixed with #nc-root so it reliably overrides Decap.
+   ================================================================== */
+@font-face {
+  font-family: 'Queensides';
+  src: url('/fonts/Queensides.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --fbu-linen: #f5f3ee;
+  --fbu-stone: #ece9e1;
+  --fbu-card: #ffffff;
+  --fbu-ink: #1e2320;
+  --fbu-muted: #5f665f;
+  --fbu-line: rgba(30, 35, 32, 0.1);
+  --fbu-sage: #5a6b51;
+  --fbu-sage-soft: rgba(90, 107, 81, 0.1);
+  --fbu-sage-light: #a9bc9a;
+  --fbu-deep: #161a17;
+  --fbu-radius: 14px;
+  --fbu-shadow: 0 1px 2px rgba(22, 26, 23, 0.04), 0 8px 24px -12px rgba(22, 26, 23, 0.12);
+  --fbu-display: 'Queensides', 'Cormorant Garamond', Georgia, serif;
+  --fbu-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background: var(--fbu-linen) !important;
+  color: var(--fbu-ink);
+  font-family: var(--fbu-ui);
+  -webkit-font-smoothing: antialiased;
+}
+#nc-root { font-family: var(--fbu-ui); }
+#nc-root ::selection { background: rgba(90, 107, 81, 0.25); }
+
+/* ---------- Top bar ---------- */
+#nc-root [class*='-AppHeader-'],
+#nc-root [class*='-AppHeader '] {
+  background: var(--fbu-deep) !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+#nc-root [class*='-AppHeaderContent'] { min-height: 60px; }
+#nc-root [class*='-AppHeaderNavLink'],
+#nc-root [class*='-AppHeaderButton'] {
+  color: rgba(236, 238, 233, 0.7) !important;
+  font-size: 13px !important;
+  letter-spacing: 0.04em;
+  border-radius: 999px !important;
+  transition: color 0.2s, background 0.2s !important;
+}
+#nc-root [class*='-AppHeaderNavLink']:hover,
+#nc-root [class*='-AppHeaderButton']:hover { color: #fff !important; background: rgba(255, 255, 255, 0.06) !important; }
+#nc-root [class*='-AppHeaderNavLink'][class*='buttonActive'],
+#nc-root [class*='-AppHeaderNavLink'].active {
+  color: var(--fbu-sage-light) !important;
+  background: rgba(169, 188, 154, 0.12) !important;
+}
+#nc-root [class*='-AppHeaderNavLink'] svg,
+#nc-root [class*='-AppHeaderButton'] svg { fill: currentColor !important; }
+#nc-root [class*='-AppHeaderSiteLink'] {
+  color: var(--fbu-sage-light) !important;
+  font-size: 13px !important;
+}
+#nc-root [class*='-AppHeaderSiteLink']:hover { color: #fff !important; }
+#nc-root [class*='-AppHeaderSiteLink'] svg { fill: currentColor !important; }
+#nc-root [class*='-AppHeaderActions'] [class*='Button'][class*='-button'] {
+  background: var(--fbu-sage) !important;
+  color: var(--fbu-linen) !important;
+  border-radius: 999px !important;
+}
+
+/* ---------- Layout & cards ---------- */
+#nc-root [class*='-AppMainContainer'] { max-width: 1320px; }
+#nc-root [class*='-SidebarContainer'],
+#nc-root [class*='-CollectionTopContainer'],
+#nc-root [class*='-ListCard '],
+#nc-root [class*='-StyledSplitPane'],
+#nc-root [class*='-MediaLibraryCard'] {
+  background: var(--fbu-card) !important;
+  border-radius: var(--fbu-radius) !important;
+  box-shadow: var(--fbu-shadow) !important;
+  border: 1px solid var(--fbu-line);
+}
+#nc-root [class*='-SidebarHeading'],
+#nc-root [class*='-CollectionTopHeading'] {
+  font-family: var(--fbu-display) !important;
+  font-weight: 400 !important;
+  color: var(--fbu-ink) !important;
+  letter-spacing: 0.01em;
+}
+#nc-root [class*='-SidebarHeading'] { font-size: 26px !important; }
+#nc-root [class*='-CollectionTopHeading'] { font-size: 34px !important; }
+#nc-root [class*='-CollectionTopDescription'] { color: var(--fbu-muted) !important; font-size: 14px !important; }
+
+#nc-root [class*='-SidebarNavLink'] {
+  border-radius: 10px !important;
+  margin: 2px 8px !important;
+  padding: 10px 14px !important;
+  border-left: 0 !important;
+  color: var(--fbu-ink) !important;
+  font-size: 14px !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+#nc-root [class*='-SidebarNavLink']:hover { background: var(--fbu-stone) !important; }
+#nc-root [class*='-SidebarNavLink'].active,
+#nc-root [class*='-SidebarNavLink'][aria-current='page'] {
+  background: var(--fbu-sage-soft) !important;
+  color: var(--fbu-sage) !important;
+  font-weight: 600 !important;
+}
+#nc-root [class*='-SidebarNavLink'] svg { fill: currentColor !important; }
+
+#nc-root [class*='-SearchInput'] {
+  background: var(--fbu-linen) !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--fbu-line) !important;
+}
+
+#nc-root [class*='-ListCard '] { transition: transform 0.2s, box-shadow 0.2s; }
+#nc-root [class*='-ListCard ']:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -14px rgba(22, 26, 23, 0.25) !important; }
+#nc-root [class*='-ListCardTitle'] { font-family: var(--fbu-display) !important; font-size: 22px !important; font-weight: 400 !important; color: var(--fbu-ink) !important; }
+
+/* ---------- Editor ---------- */
+#nc-root [class*='-EditorContainer'],
+#nc-root [class*='-ControlPaneContainer'] { background: var(--fbu-linen) !important; }
+#nc-root [class*='-ToolbarContainer'] {
+  background: var(--fbu-card) !important;
+  border-bottom: 1px solid var(--fbu-line) !important;
+  box-shadow: none !important;
+}
+#nc-root [class*='-BackCollection'] { color: var(--fbu-ink) !important; font-family: var(--fbu-display); font-size: 17px !important; }
+#nc-root [class*='-ToolbarButton'] {
+  border-radius: 999px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+}
+#nc-root [class*='-ToolbarButton'][class*='PublishButton'],
+#nc-root [class*='-ToolbarButton'][class*='-PublishedButton'],
+#nc-root [class*='-ToolbarButton'][class*='SaveButton'] {
+  background: var(--fbu-sage) !important;
+  color: var(--fbu-linen) !important;
+}
+#nc-root [class*='-ToolbarButton'][class*='DeleteButton'] { background: #f6e3e1 !important; color: #8a2e24 !important; }
+
+#nc-root [class*='-ControlContainer'] { margin-bottom: 22px !important; }
+#nc-root [class*='-FieldLabel'] {
+  background: transparent !important;
+  color: var(--fbu-sage) !important;
+  border: 0 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  padding: 0 0 6px !important;
+}
+#nc-root [class*='-ControlHint'] { color: var(--fbu-muted) !important; font-size: 12.5px !important; line-height: 1.5 !important; }
+
+#nc-root [class*='-ControlContainer'] input:not([type='checkbox']):not([type='file']),
+#nc-root [class*='-ControlContainer'] textarea,
+#nc-root [class*='-ControlContainer'] [class*='-control'] {
+  background: var(--fbu-card) !important;
+  border: 1px solid var(--fbu-line) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  color: var(--fbu-ink) !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+#nc-root [class*='-ControlContainer'] input:focus,
+#nc-root [class*='-ControlContainer'] textarea:focus {
+  border-color: var(--fbu-sage) !important;
+  box-shadow: 0 0 0 3px rgba(90, 107, 81, 0.15) !important;
+  outline: none !important;
+}
+
+/* List items (each film / photo) as tidy cards */
+#nc-root [class*='-ListItem'] {
+  background: var(--fbu-card) !important;
+  border: 1px solid var(--fbu-line) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--fbu-shadow) !important;
+  margin-bottom: 12px !important;
+  overflow: hidden;
+}
+#nc-root [class*='-TopBar'] {
+  background: var(--fbu-stone) !important;
+  border-radius: 0 !important;
+}
+#nc-root [class*='-TopBarContainer'] {
+  background: var(--fbu-card) !important;
+  border: 1px solid var(--fbu-line) !important;
+  border-radius: 12px !important;
+}
+#nc-root [class*='-NestedObjectLabel'] { color: var(--fbu-ink) !important; font-size: 14px !important; }
+#nc-root [class*='-AddButton'],
+#nc-root [class*='-FileWidgetButton'] {
+  background: var(--fbu-sage) !important;
+  color: var(--fbu-linen) !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  font-weight: 600 !important;
+}
+#nc-root [class*='-AddButton'] svg { fill: currentColor !important; }
+#nc-root [class*='-FileWidgetButtonRemove'] { background: #f6e3e1 !important; color: #8a2e24 !important; }
+#nc-root [class*='-StyledImage'] { border-radius: 10px !important; }
+#nc-root [class*='-ToggleBackground'][class*='isActive'],
+#nc-root [class*='-ToggleBackground'][class*='Active'] { background: var(--fbu-sage) !important; }
+
+#nc-root [class*='-PreviewPaneContainer'] { background: var(--fbu-linen) !important; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 799px) {
+  #nc-root [class*='-AppHeaderContent'] { flex-wrap: wrap; gap: 6px; }
+  #nc-root [class*='-CollectionTopHeading'] { font-size: 26px !important; }
+}
+
+/* ---------- Remaining Decap blues & greys → sage / white ---------- */
+#nc-root [class*='-ViewControlsButton'] { color: rgba(30, 35, 32, 0.3) !important; }
+#nc-root [class*='-ViewControlsButton'][class*='Active'],
+#nc-root [class*='-ViewControlsButton']:hover { color: var(--fbu-sage) !important; }
+#nc-root [class*='-ButtonRound'] { color: var(--fbu-sage) !important; box-shadow: var(--fbu-shadow) !important; }
+#nc-root [class*='-PreviewLink'] { color: var(--fbu-sage) !important; }
+#nc-root [class*='-PreviewLink'] svg { fill: currentColor !important; }
+#nc-root .Resizer { background: var(--fbu-line) !important; border-color: transparent !important; }
+#nc-root .Resizer:hover { background: var(--fbu-sage) !important; }
+#nc-root [class*='-NestedObjectLabel'] { background: var(--fbu-card) !important; padding: 12px 16px !important; }
+#nc-root [class*='-ListItem'] [class*='-TopBar'] { background: var(--fbu-stone) !important; }
+#nc-root [class*='-ControlTopbar'] { background: transparent !important; }
+#nc-root [class*='-FieldLabel']::before,
+#nc-root [class*='-FieldLabel']::after { display: none !important; }
+#nc-root [class*='-ControlContainer'] a { color: var(--fbu-sage) !important; }
+#nc-root [class*='-BackStatus'] { color: var(--fbu-sage) !important; }
+
+/* ---------- Header shortcuts (added by admin.js) ---------- */
+#nc-root .fbu-shortcuts { display: flex; align-items: center; gap: 4px; margin-left: auto; margin-right: 8px; }
+#nc-root .fbu-shortcuts a {
+  color: rgba(236, 238, 233, 0.72); font-size: 13px; text-decoration: none;
+  padding: 8px 12px; border-radius: 999px; transition: color .2s, background .2s; white-space: nowrap;
+}
+#nc-root .fbu-shortcuts a:hover { color: #fff; background: rgba(255, 255, 255, 0.07); }
+#nc-root .fbu-shortcuts a:last-child { color: var(--fbu-sage-light); }
+#nc-root [class*='-AppHeaderSiteLink'] { display: none !important; }
+#nc-root [class*='-AppHeaderNavLink'] svg path,
+#nc-root [class*='-AppHeaderNavLink'] [class*='-Icon'] { fill: currentColor !important; color: currentColor !important; }
+@media (max-width: 799px) {
+  #nc-root .fbu-shortcuts { order: 3; width: 100%; margin: 0; overflow-x: auto; padding-bottom: 6px; }
+}
